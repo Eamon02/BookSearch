@@ -1,16 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const GoogleBooksSchema = new Schema({
-	book: {
-		type: Schema.Types.ObjectId,
-	},
+const GoogleBookSchema = new Schema({
 	title: {
 		type: String,
 		required: true,
 	},
 	authors: {
-		type: String,
+		type: [String],
 	},
 	description: {
 		type: String,
@@ -21,10 +18,6 @@ const GoogleBooksSchema = new Schema({
 	link: {
 		type: String,
 	},
-	date: {
-		type: Date,
-		default: Date.now,
-	},
 });
 
-module.exports = mongoose.model('GoogleBooks', GoogleBooksSchema);
+module.exports = mongoose.model('GoogleBook', GoogleBookSchema);

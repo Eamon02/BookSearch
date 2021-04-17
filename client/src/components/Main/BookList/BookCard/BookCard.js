@@ -1,4 +1,5 @@
 import React from 'react';
+import SaveButton from './Buttons/SaveButton'
 
 const BookCard = (props) => {
 	return (
@@ -11,6 +12,7 @@ const BookCard = (props) => {
 				<a href={props.link} className='btn btn-primary'>
 					View
 				</a>
+                <SaveButton/>
 			</div>
 		</div>
 	);
