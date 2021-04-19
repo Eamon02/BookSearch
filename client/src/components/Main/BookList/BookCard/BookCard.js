@@ -1,7 +1,18 @@
 import React from 'react';
-import SaveButton from './Buttons/SaveButton'
+import axios from 'axios';
 
 const BookCard = (props) => {
+	const saveBook = async () => {
+		const book = {
+			title: props.title,
+			author: props.authors,
+			description: props.description,
+			image: props.image,
+			link: props.link,
+		};
+		const res = await axios.post('/api/books', book);
+		console.log(res)
+	};
 	return (
 		<div className='card'>
 			<img src={props.image} className='card-img-top' alt='...' />
@@ -12,7 +23,7 @@ const BookCard = (props) => {
 				<a href={props.link} className='btn btn-primary'>
 					View
 				</a>
-                <SaveButton/>
+				<button onClick={saveBook}>Save</button>
 			</div>
 		</div>
 	);

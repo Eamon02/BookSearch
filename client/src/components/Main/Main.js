@@ -17,7 +17,7 @@ class Main extends Component {
 			.then((data) => {
 				console.log(data);
 				this.setState({ books: [...data.body.items] });
-			});
+			}).catch(err => {console.log(err)});
 	};
 
 	handleSearch = (e) => {

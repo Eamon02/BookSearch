@@ -12,7 +12,7 @@ export default function BookList(props) {
 							title={book.volumeInfo.title}
 							authors={book.volumeInfo.authors}
 							description={book.volumeInfo.description}
-							image={book.volumeInfo.imageLinks.thumbnail}
+							image={book?.volumeInfo?.imageLinks?.thumbnail}
 							link={book.accessInfo.webReaderLink}
 						/>
 					);
